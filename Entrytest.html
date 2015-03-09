@@ -16,9 +16,26 @@ and open the template in the editor.
         <fieldset style="background-color: bisque; width: 40%; height: 40%; " />
         <legend allign="left">Login Credentials</legend>
         <form method="post" action="Entry.php" >
-           id <input type="text" name="id" /><br><br> <!-- Put as many input types as variables and name them the name that u use to recieve. DUH!  -->  
+        id <input type="text" name="id[]" /><br/>
+
+<div id="extraForms"></div>
             <input type="submit" value="Login" />
             
-        </form></center>
+        </form>
+
+<button onclick="addMore()">Add More fields</button>
+</center>
     </body>
+
+
+<script type="text/javascript">
+     function addMore(){
+        v = document.getElementById('extraForms');
+        v.innerHTML = v.innerHTML+'id <input type="text" name="id[]" /><br/>';
+     }
+
+</script>
+
+
+
 </html>

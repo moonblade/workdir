@@ -15,7 +15,6 @@ $db_handle = mysql_connect($server, $user_name, $password);
 $db_found = mysql_select_db($database, $db_handle);
 if ($db_found) {
 	$time=time();
-	// $time=date(time());
 	$SQL = "SELECT * FROM Student where id = '$id'";
 	$result = mysql_query($SQL) or die(mysql_error());
 	$num_rows = mysql_num_rows($result);
