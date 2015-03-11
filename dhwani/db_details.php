@@ -4,4 +4,11 @@ $password = '';
 $database = 'campus';
 $server = 'localhost';
 
+$tablename="Details";
+$id_attribute="id";
+$name_attribute="name";
+$inside_attribute="inside";
+$branch_attribute="branch";
+
+
 ?>

@@ -31,7 +31,7 @@ if ($db_found)
 				$timeresult=mysql_query($gettime) or die(mysql_error());
 				$timerow = mysql_fetch_assoc($timeresult);
 				$name=$timerow[$name_attribute];
-				{
+				$branch=$timerow[$branch_attribute];				{
 					?>
 					<!DOCTYPE html>
 					<html>

@@ -1,6 +1,7 @@
 <?PHP
 include "db_details.php";
-$id = $_POST['id'];
+$i = $_POST['id'];
+// $id = $_POST['id'];
 
 function not_in($row)
 {
@@ -14,9 +15,9 @@ $db_handle = mysql_connect($server, $user_name, $password);
 
 $db_found = mysql_select_db($database, $db_handle);
 if ($db_found) {
-	foreach ($id as $i) 
-		if (strlen($i)!=0)
-		{
+	// foreach ($id as $i) 
+		// if (strlen($i)!=0)
+		// {
 			$time=time();
 			$SQL = "SELECT * FROM Student where id = '$i'";
 			$result = mysql_query($SQL) or die(mysql_error());
@@ -36,14 +37,12 @@ if ($db_found) {
 					$timestamp = $timerow['inside'];
 					$dt = new DateTime("@$timestamp");
 					$message=$i." got inside at ".$dt->format('Y-m-d H:i:s');;
-				}
 			}else{
+				}
 				$message="Entry not found";
 			}	
 			print $message."</br>";
-		} 
-
-
+		// } 
 	}
 	mysql_close($db_handle);
 	?>
