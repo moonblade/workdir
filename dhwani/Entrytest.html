@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Login Page</title>
+        <title>Entrance</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -14,11 +14,12 @@ and open the template in the editor.
     <body>
         <center>
         <fieldset style="background-color: bisque; width: 40%; height: 40%; " />
-        <legend allign="left">Login Credentials</legend>
+        <legend allign="left">Student ID</legend>
         <form id="form" method="post" action="Confirm.php" >
-        id <input type="text" name="id[]" /><br/>
-            <div id="extraForms"></div>
-            <input type="submit" value="Login" />
+        id </br>
+            <input type="text" name="id[]" /><br/>
+            <div id="extraforms"></div>
+            <input type="submit" value="Submit" />
             
         </form>
 
@@ -30,9 +31,10 @@ and open the template in the editor.
 <script type="text/javascript">
      function addMore(){
        var element=document.createElement("input");element.setAttribute("type","text");element.setAttribute("name","id[]");
-       var foo=document.getElementById("form");foo.appendChild(element);
-        // v = document.getElementById('extraForms');
-        // v.innerHTML = v.innerHTML+'id <input type="text" name="id[]" /><br/>';
+       var foo=document.getElementById("extraforms");
+       // foo.appendChild("id");
+       foo.appendChild(element);
+       foo.appendChild(document.createElement('br'));
 
      }
 

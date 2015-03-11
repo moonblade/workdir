@@ -35,7 +35,7 @@ if ($db_found)
 					<body>
 						<center>
 							<form method="post" action="Entry.php" >
-								<?php echo "id : ".$i."</br> Name : ".$name."</br> Branch : ".$branch."</br>";?>
+								<?php echo "id : ".$i.", Name : ".$name."</br> Branch : ".$branch."</br>";?>
 								<input type="hidden" name="id" value="<?php echo $i;?>">
 								<input class="button" type="submit" value="Confirm" />
 
