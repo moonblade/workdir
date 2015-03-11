@@ -17,7 +17,8 @@ $db_handle = mysql_connect($server, $user_name, $password);
 $db_found = mysql_select_db($database, $db_handle);
 if ($db_found) 
 {
-	$time=time();
+	$time=time()+(5.5 * 60 * 60);
+	//correction for india
 	$boo=new DateTime("@$time");
 	print "Current Time is ".$boo->format("Y-m-d H:i:s")."<br><br>";	
 	foreach ($id as $i) {
