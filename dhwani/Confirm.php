@@ -4,6 +4,12 @@ $id = $_POST['id'];
 if (isset($_POST['con']))
 	$con=$_POST['con'];
 
+function draw_line()
+{
+	for ($temp=0; $temp <250 ; $temp++) { 
+		echo "-";
+	}
+}
 function not_in($row)
 {
 	if ($row['inside']=="Null")
@@ -17,10 +23,12 @@ $db_handle = mysql_connect($server, $user_name, $password);
 $db_found = mysql_select_db($database, $db_handle);
 if ($db_found) 
 {
-	$time=time()+(5.5 * 60 * 60);
 	//correction for india
+	$time=time()+(5.5 * 60 * 60);
 	$boo=new DateTime("@$time");
-	print "Current Time is ".$boo->format("Y-m-d H:i:s")."<br><br>";	
+	print "Current Time is ".$boo->format("Y-m-d H:i:s")."<br><br>";
+	draw_line();
+
 	foreach ($id as $i) {
 		if (strlen($i)!=0)
 		{
@@ -72,7 +80,7 @@ if ($db_found)
 													echo $message;
 												}		
 											}
-											
+
 										}
 
 										?>
@@ -83,9 +91,7 @@ if ($db_found)
 								</html>
 								<?PHP 
 							} 
-							for ($temp=0; $temp <500 ; $temp++) { 
-								echo "-";
-							}
+							draw_line();
 							echo "\n\n";
 						} 
 					}
