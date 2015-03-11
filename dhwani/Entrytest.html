@@ -15,10 +15,9 @@ and open the template in the editor.
         <center>
         <fieldset style="background-color: bisque; width: 40%; height: 40%; " />
         <legend allign="left">Login Credentials</legend>
-        <form method="post" action="Entry.php" >
+        <form id="form" method="post" action="Entry.php" >
         id <input type="text" name="id[]" /><br/>
-
-<div id="extraForms"></div>
+            <div id="extraForms"></div>
             <input type="submit" value="Login" />
             
         </form>
@@ -30,8 +29,11 @@ and open the template in the editor.
 
 <script type="text/javascript">
      function addMore(){
-        v = document.getElementById('extraForms');
-        v.innerHTML = v.innerHTML+'id <input type="text" name="id[]" /><br/>';
+       var element=document.createElement("input");element.setAttribute("type","text");element.setAttribute("name","id[]");
+       var foo=document.getElementById("form");foo.appendChild(element);
+        // v = document.getElementById('extraForms');
+        // v.innerHTML = v.innerHTML+'id <input type="text" name="id[]" /><br/>';
+
      }
 
 </script>
