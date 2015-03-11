@@ -27,18 +27,16 @@ if ($db_found)
 			$num_rows = mysql_num_rows($result);
 			$row = mysql_fetch_assoc($result);
 			if ($num_rows > 0) {
-				$gettime="SELECT $inside_attribute,name from $tablename where id='$i'";
-				$timeresult=mysql_query($gettime) or die(mysql_error());
-				$timerow = mysql_fetch_assoc($timeresult);
-				$name=$timerow[$name_attribute];
-				$branch=$timerow[$branch_attribute];				{
+				// $gettime="SELECT $inside_attribute,$name_attribute,$branch_attribute from $tablename where id='$i'";
+				$name=$row[$name_attribute];
+				$branch=$row[$branch_attribute];				{
 					?>
 					<!DOCTYPE html>
 					<html>
 					<body>
 						<center>
 							<form method="post" action="Entry.php" >
-								<?php echo "id : ".$i.", Name : ".$name;?>
+								<?php echo "id : ".$i."</br> Name : ".$name."</br> Branch : ".$branch."</br>";?>
 								<input type="hidden" name="id" value="<?php echo $i;?>">
 								<input class="button" type="submit" value="Confirm" />
 
