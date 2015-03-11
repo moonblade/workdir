@@ -6,7 +6,10 @@ function resetall()
 {
 	if($GLOBALS['pass']=="reset")
 	{
-		$SQL="UPDATE ($GLOBALS['tablename'] set $GLOBALS['inside_attribute']='Null'";
+		$table=$GLOBALS['tablename'];
+		$inside=$GLOBALS['inside_attribute'];
+		// $SQL="UPDATE $GLOBALS['tablename'] set $GLOBALS['inside_attribute']='Null'";
+		$SQL="UPDATE $table set $inside='Null'";
 		$nresult=mysql_query($SQL);
 		if($nresult)
 		{
@@ -24,7 +27,6 @@ function resetall()
 mysql_connect($server, $user_name, $password);
 $db_handle = mysql_connect($server, $user_name, $password);
 $db_found = mysql_select_db($database, $db_handle);
-$tablename
 if ($db_found) 
 {
 	resetall();
