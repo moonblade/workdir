@@ -29,53 +29,66 @@ if ($db_found)
 			$row = mysql_fetch_assoc($result);
 			if ($num_rows > 0) {
 				$name=$row[$name_attribute];
-				$branch=$row[$branch_attribute];				{
+				$branch=$row[$branch_attribute];
+				$inside=$row[$inside_attribute];
+				{
 					?>
 					<!DOCTYPE html>
 					<html>
 					<body>
 						<center>
 							<form method="post" action="Confirm.php" >
-								<?php echo "id : ".$i.", Name : ".$name."</br> Branch : ".$branch."</br>";?>
-								<input type="hidden" name="con" value="<?php echo $i;?>">
-								<?php
-								foreach ($id as $key) {
-									?><input type="hidden" name="id[]" value="<?php echo $key;?>"><?PHP
-								}?>	
-								<input class="button" type="submit" value="Confirm" />
+								<?php if($inside=="Null"){
+									?>
+									<fieldset style="background-color: #27ae60; width: 40%;" />
 
-							</form>
-							<?PHP
-							if(isset($con) && $i==$con){
-								if (not_in($row)){
-									$update = "UPDATE $tablename SET $inside_attribute ='$time' where $id_attribute='$i'";
-									$upresult = mysql_query($update) or die(mysql_error());
-									if ($upresult) {
-										$message= $i." : ".$name." ----- Updated";
-									}		
-								}else{
-									$timestamp = $row[$inside_attribute];
-									$dt = new DateTime("@$timestamp");
-									$message=$i." : ".$name." ----- got inside at ".$dt->format('Y-m-d H:i:s');;
-								}
-								echo $message;
+									<?php }else{
+										$dt = new DateTime("@$inside");
+										$message="----- got inside at ".$dt->format('Y-m-d H:i:s');;?>
+										<fieldset style="background-color: #e74c3c; width: 40%;" />
+										<?php }echo "id : ".$i.", Name : ".$name."</br> Branch : ".$branch."</br>";?>
+										<input type="hidden" name="con" value="<?php echo $i;?>">
+										<?php
+										foreach ($id as $key) {
+											?><input type="hidden" name="id[]" value="<?php echo $key;?>"><?PHP
+										}?>	
+										<?php if($inside=="Null"){
+											?>
+											<input class="button" type="submit" value="Confirm"/></br>
+											<?php }
+											else{
+												echo $message;}?>
+
+											</fieldset>
+										</form>
+										<?PHP
+										if(isset($con) && $i==$con){
+											if (not_in($row)){
+												$update = "UPDATE $tablename SET $inside_attribute ='$time' where $id_attribute='$i'";
+												$upresult = mysql_query($update) or die(mysql_error());
+												if ($upresult) {
+													$message= $i." : ".$name." ----- Updated";
+													echo $message;
+												}		
+											}
+											
+										}
+
+										?>
+
+									</center>
+								</body>
+								</html>
+								</html>
+								<?PHP 
+							} 
+							for ($temp=0; $temp <500 ; $temp++) { 
+								echo "-";
 							}
-
-							?>
-
-						</center>
-					</body>
-					</html>
-					</html>
-					<?PHP 
-				} 
-				for ($temp=0; $temp <500 ; $temp++) { 
-					echo "-";
+							echo "\n\n";
+						} 
+					}
 				}
-				echo "\n\n";
-			} 
-		}
-	}
-}
-mysql_close($db_handle);
-?>
+			}
+			mysql_close($db_handle);
+			?>
