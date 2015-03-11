@@ -6,7 +6,7 @@ function resetall()
 {
 	if($GLOBALS['pass']=="reset")
 	{
-		$SQL= "UPDATE ($GLOBALS['tablename'] set $GLOBALS['inside_attribute']='Null'";
+		$SQL="UPDATE ($GLOBALS['tablename'] set $GLOBALS['inside_attribute']='Null'";
 		$nresult=mysql_query($SQL);
 		if($nresult)
 		{
