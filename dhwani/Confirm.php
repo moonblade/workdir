@@ -27,7 +27,6 @@ if ($db_found)
 			$num_rows = mysql_num_rows($result);
 			$row = mysql_fetch_assoc($result);
 			if ($num_rows > 0) {
-				// $gettime="SELECT $inside_attribute,$name_attribute,$branch_attribute from $tablename where id='$i'";
 				$name=$row[$name_attribute];
 				$branch=$row[$branch_attribute];				{
 					?>
@@ -47,7 +46,6 @@ if ($db_found)
 					</html>
 					<?PHP 
 				} 
-			// print $message."</br>";
 			} 
 		}
 	}
