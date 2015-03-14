@@ -12,5 +12,5 @@ $level_attribute='level';
 $pass_attribute='password';
 $user_attribute='username';
 $tm_attribute='thismonth';
-$pm_attribute='previousmonth';
+$guest_attribute='guest';
 ?>

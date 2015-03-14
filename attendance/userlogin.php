@@ -14,7 +14,7 @@ include("connect.php");
 		$_SESSION[$id_attribute] = $row[$id_attribute];
 		$_SESSION[$name_attribute]= $row[$name_attribute];
 		$_SESSION[$level_attribute]=$row[$level_attribute];
-		$_SESSION[$pm_attribute]=$row[$pm_attribute];
+		$_SESSION[$guest_attribute]=$row[$guest_attribute];
 		$_SESSION[$tm_attribute]=$row[$tm_attribute];
 		$message= strval($_SESSION[$id_attribute]);
 	}
