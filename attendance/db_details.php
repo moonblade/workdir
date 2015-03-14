@@ -4,13 +4,18 @@ $password = '';
 $database = 'ICC';
 $server = 'localhost';
 
-$tablename= 'Student';
+$student_table= 'Student';
 
-$id_attribute= 'id';
-$name_attribute='name';
-$level_attribute='level';
-$pass_attribute='password';
-$user_attribute='username';
-$tm_attribute='thismonth';
-$guest_attribute='guest';
+$id_att= 'id';
+$name_att='name';
+$level_att='level';
+$pass_att='password';
+$user_att='username';
+$tm_att='thismonth';
+$guest_att='guest';
+
+$mess_table='mess';
+$mid_att='mid';
+$est_att='establishment';
+$cpd_att='cost_per_day';
 ?>

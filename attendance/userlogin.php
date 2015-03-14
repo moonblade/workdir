@@ -4,19 +4,19 @@ $username = $_POST['username'];
 $pass = md5($_POST['password']);
 include("connect.php");
 {
-	$SQL = "SELECT * FROM $tablename where $user_attribute = '$username' and $pass_attribute = '$pass'";
+	$SQL = "SELECT * FROM $student_table where $user_att = '$username' and $pass_att = '$pass'";
 	$result = mysql_query($SQL) or die(mysql_error());
 	$num_rows = mysql_num_rows($result);
 	$row = mysql_fetch_assoc($result);
 	if ($num_rows > 0) {
-		$_SESSION[$user_attribute]=$row[$user_attribute];
-		$_SESSION[$pass_attribute]=$row[$pass_attribute];
-		$_SESSION[$id_attribute] = $row[$id_attribute];
-		$_SESSION[$name_attribute]= $row[$name_attribute];
-		$_SESSION[$level_attribute]=$row[$level_attribute];
-		$_SESSION[$guest_attribute]=$row[$guest_attribute];
-		$_SESSION[$tm_attribute]=$row[$tm_attribute];
-		$message= strval($_SESSION[$id_attribute]);
+		$_SESSION[$user_att]=$row[$user_att];
+		$_SESSION[$pass_att]=$row[$pass_att];
+		$_SESSION[$id_att] = $row[$id_att];
+		$_SESSION[$name_att]= $row[$name_att];
+		$_SESSION[$level_att]=$row[$level_att];
+		$_SESSION[$guest_att]=$row[$guest_att];
+		$_SESSION[$tm_att]=$row[$tm_att];
+		$message= strval($_SESSION[$id_att]);
 	}
 	else {
 		$message= "error";
