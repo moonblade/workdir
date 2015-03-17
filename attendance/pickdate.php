@@ -29,21 +29,22 @@
 			$(function() {
 				// Version //
 				//$('title').append(' v' + latestMDPver);
-				$('.mdp-version').text('v' + latestMDPver);
-				$('#mdp-title').attr('title', 'last update: ' + lastMDPupdate);
+				// $('.mdp-version').text('v' + latestMDPver);
+				// $('#mdp-title').attr('title', 'last update: ' + lastMDPupdate);
+				
 				
 				// Documentation //
-				$('i:contains(type)').attr('title', '[Optional] accepted values are: "allowed" [default]; "disabled".');
-				$('i:contains(format)').attr('title', '[Optional] accepted values are: "string" [default]; "object".');
-				$('#how-to h4').each(function () {
-					var a = $(this).closest('li').attr('id');
-					$(this).wrap('<'+'a href="#'+a+'"></'+'a>');
-				});
-				$('#demos .demo').each(function () {
-					var id = $(this).find('.box').attr('id') + '-demo';
-					$(this).attr('id', id)
-						.find('h3').wrapInner('<'+'a href="#'+id+'"></'+'a>');
-				});
+				// $('i:contains(type)').attr('title', '[Optional] accepted values are: "allowed" [default]; "disabled".');
+				// $('i:contains(format)').attr('title', '[Optional] accepted values are: "string" [default]; "object".');
+				// $('#how-to h4').each(function () {
+				// 	var a = $(this).closest('li').attr('id');
+				// 	$(this).wrap('<'+'a href="#'+a+'"></'+'a>');
+				// });
+				// $('#demos .demo').each(function () {
+				// 	var id = $(this).find('.box').attr('id') + '-demo';
+				// 	$(this).attr('id', id)
+				// 		.find('h3').wrapInner('<'+'a href="#'+id+'"></'+'a>');
+				// });
 				
 				// Run Demos
 				$('.demo .code').each(function() {
@@ -66,7 +67,7 @@
 		<!-- loads some utilities (not needed for your developments) -->
 		<link rel="stylesheet" type="text/css" href="css/mdp.css">
 		<link rel="stylesheet" type="text/css" href="css/prettify.css">
-		<script type="text/javascript" src="js/prettify.js"></script>
+		<!-- // <script type="text/javascript" src="js/prettify.js"></script> -->
 		<script type="text/javascript" src="js/lang-css.js"></script>
 		<script type="text/javascript">
 		$(function() {
@@ -77,24 +78,10 @@
 	</head>
 	<body>
 			<div id="demos">
-				<h2>Demos</h2>
-				<p>
-					Here are some demos for you to understand how it works and what you can obtain with it.<br>
-					To see how it is implemented simply check the source code of this page: I've tried to keep the code simple and clear :)
-				</p>
 				
 					<li class="demo">
-						<h3>Min and Max date</h3>
 						<div id="simple-select-min-max" class="box"></div>
-						<p class="description">
-							As with the jQuery Datespicker, you can define a minimum and maximum date from where to pick dates.<br>
-							The values are relative to the current date.
-						</p>
-						<p class="example">
-							In this example the minimum day is set to today and the maximum to 30 days from now.
-						</p>
 						<div class="code-box">
-							<h4>Code used</h4>
 							<pre class="code prettyprint">
 var today = new Date();
 $('#simple-select-min-max').multiDatesPicker({
